@@ -34,3 +34,7 @@ p, li{
 section{
     padding-left: 50px;
 }
+footer{
+    text-align: center;
+    background: aqua;
+}
