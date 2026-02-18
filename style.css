@@ -9,4 +9,28 @@ body{
 .container{
     width: 80%;
     margin: auto;
+    background: #fff;
+}
+header{
+    display: flex;
+    align-items: center;
+
+}
+header img{
+    width: 200px;
+}
+h1{
+    flex : 1;
+    text-align: center;
+    background: aqua;
+    padding: 50px;
+}
+h2{
+    color: aqua;
+}
+p, li{
+    padding: 5px;
+}
+section{
+    padding-left: 50px;
 }
