@@ -12,8 +12,8 @@ git remote -v
 
 git remote add origin URL
 
-git push -u origin master
-git push origin --tags
+git pull -u origin master
+git pull origin --tags
 
 git fetch origin master
 
