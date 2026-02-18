@@ -24,9 +24,10 @@
     </ul>
     <h2>Configuration</h2>
     <ul>
-        <li><strong>git config --global user.name="alex"</strong></li>
-        <li><strong>git config --global user.email="alex@gmail.com"</strong></li>
+        <li><strong>git config --global user.name "alex"</strong></li>
+        <li><strong>git config --global user.email "alex@gmail.com"</strong></li>
         <li><strong>git config --list</strong></li>
+        <li><strong>git</strong> :Aide de git</li>
     </ul>
     <h2>Initialiser un dépôt git</h2>
     <p><strong>git init</strong> : Création un dossier cacher .git</p>
@@ -42,10 +43,61 @@
             <ul>
                 <li>Zone du travail ==> en rouge fichier non suivie(Untracked files)</li>
                 <li>Zone index ==> en vert Modification qui seront validéees (Changes to be committed)</li>
+                <li>zone dépôt ==> Arbre de travil propre(Working tree clean)</li>
             </ul>
-
+        </li>
+        <li>
+            <mark>git add</mark>
+            <ul>
+                <li>nom_fichier : Ajouter un fichier dans la zone index</li>
+                <li>. : Ajouter plusieurs fichier du répértoire courant dans la zone indexe</li>
+            </ul>
+        </li>
+        <li><mark>git reset</mark> : Permer de passe de la zone index vers zone du travail</li>
+        <li><mark>git commit -m"message"</mark> : passer de la zone index vers la zone de dépôt</li>
+        <li><img src="./images/featured.png" alt=""></li>
+        <li>
+            <mark>git log</mark>
+            <ul>
+                <li>Afficher les commites[SHA-1: identifaint unique de 40 caractéres, l'auteur, date de création, message de la commit, un ensemble de modification, liste(SHA-1) de son ou ses parents]</li>
+                <li>--oneline : Afficher les commites en lines</li>
+                <li>--oneline -1 :Afficher le dernier commit</li>
+                <li>--oneline -2: Afficher les deux derniers commites</li>
+                <li>-p nom_fichier : Afficher les modofications sur les fichiers</li>
+                <li>Exemple des comites<br><img src="./images/commit.webp" alt="" srcset=""></li>
+            </ul>
+        </li>
+        <li><mark>git show </mark> : Voir un commit en détail</li>
+        <li><mark>git diff</mark>
+            <ul>
+                <li>tous les modifications entre zone du travail et la dernier commite (- ou rouge: supprission d'une ligne, + ou vert ajout d'une ligne)</li>
+                <li>--cached : Modification entre zone index et la dernier commite</li>
+            </ul>
+        </li>
+        <li>
+            Pointeurs:
+            <ul>
+                <li>Master : pointeur branche principale qui poite sur la dernier commit</li>
+                <li>HEAD : Poite par défaut sur master mais on peut la déplacer entre les commites</li>
+                <li>Tag : pointeur personnel fix</li>
+                <li>Création d'un tag:
+                    <ol>
+                        <li>Déplacer au niveau du commit : git checkout SHA-1</li>
+                        <li>Donner un nom au tag : <mark>git tag V01</mark></li> 
+                        <li>Supprimer un tag : git tag --delete 'V01'</li>
+                        
+                    </ol>
+                </li>
+            </ul>
+        </li>
+        <li>Déplacer le tag HEAD entre les commites:
+            <ul>
+                <li><mark>git checkout</mark> SHA-1 : Voir les comites sans modofocations</li>
+                <li>git checkout master : revenir a la dernier commite</li>
+            </ul>
         </li>
     </ul>
+
 </div>
 </body>
 </html>
