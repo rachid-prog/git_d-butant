@@ -1,40 +1,126 @@
-*{
+/* style.css */
+
+/* Reset basique */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    background: silver;
-}
-.container{
-    width: 80%;
-    margin: auto;
-    background: #fff;
-}
-header{
-    display: flex;
-    align-items: center;
 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 20px;
 }
-header img{
-    width: 200px;
+
+/* Conteneur principal */
+.container {
+    max-width: 80%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 25px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
-h1{
-    flex : 1;
+
+/* Header */
+header {
     text-align: center;
-    background: aqua;
-    padding: 50px;
+    margin-bottom: 40px;
 }
-h2{
-    color: aqua;
+
+header img {
+    width: 120px;
+    margin-bottom: 15px;
 }
-p, li{
-    padding: 5px;
+
+header h1 {
+    font-size: 2rem;
+    color: #1f4e79;
 }
-section{
-    padding-left: 50px;
+
+/* Titres */
+h2 {
+    color: #1f4e79;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #1f4e79;
+    padding-bottom: 5px;
 }
-footer{
+
+h3 {
+    color: #2a6f8f;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Paragraphes */
+p {
+    margin-bottom: 15px;
+}
+
+/* Listes */
+ul, ol {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* Commandes Git */
+code {
+    background-color: #f4f4f4;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95rem;
+}
+
+mark {
+    background-color: #ffef85;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    margin: 15px 0;
+    border-radius: 8px;
+}
+
+/* Footer */
+footer {
     text-align: center;
-    background: aqua;
+    margin-top: 40px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Liens */
+a {
+    color: #1f4e79;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 1.6rem;
+    }
 }

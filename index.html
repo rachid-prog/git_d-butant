@@ -3,147 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formation git</title>
+    <title>Formation Git & GitHub</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <div class="container">
+
     <header>
-        <img src="./images/logo.png" alt="" srcset="">
-        <h1>Formation git</h1>
+        <img src="./images/logo.png" alt="Logo Formation Git">
+        <h1>Formation Git & GitHub</h1>
     </header>
+
     <section>
-    <p>
-        <strong>Git est un système dec contrôle de version distribué</strong>
-    </p>
-    <ul>
-        <li>Suivre les modofications des fichiers.</li>
-        <li>Revenir à des versions précédentes.</li>
-        <li>Permettre à plusieurs personnes de travailler sur le même projet</li>
-        <li>Conserver l'historique du code</li>
-    </ul>
-    <h2>Instalation</h2>
-    <ul>
-        <li><a href="https://git-scm.com/install/windows">https://git-scm.com/install/windows</a></li>
-        <li><strong>git -v</strong> : Vérifier l'instalation</li>
-    </ul>
-    <h2>Configuration</h2>
-    <ul>
-        <li><strong>git config --global user.name "alex"</strong></li>
-        <li><strong>git config --global user.email "alex@gmail.com"</strong></li>
-        <li><strong>git config --list</strong></li>
-        <li><strong>git</strong> :Aide de git</li>
-    </ul>
-    <h2>Initialiser un dépôt git</h2>
-    <p><strong>git init</strong> : Création un dossier cacher .git</p>
-    <h2>Zone git</h2>
-    <ul>
-        <li>Zonde de travail</li>
-        <li>Zone d 'index</li>
-        <li>Zonde de dépôt</li>
-    </ul>
-    <h2>Les commandes git</h2>
-    <ul>
-        <li><mark>git status</mark> : Affiche létat actuel du dépôt git[Branche acuelle, fichiers modifiers ou indexé, fichier non suivie]
-            <ul>
-                <li>Zone du travail ==> en rouge fichier non suivie(Untracked files)</li>
-                <li>Zone index ==> en vert Modification qui seront validéees (Changes to be committed)</li>
-                <li>zone dépôt ==> Arbre de travil propre(Working tree clean)</li>
-            </ul>
-        </li>
-        <li>
-            <mark>git add</mark>
-            <ul>
-                <li>nom_fichier : Ajouter un fichier dans la zone index</li>
-                <li>. : Ajouter plusieurs fichier du répértoire courant dans la zone indexe</li>
-            </ul>
-        </li>
-        <li><mark>git reset</mark> : Permer de passe de la zone index vers zone du travail</li>
-        <li><mark>git commit -m"message"</mark> : passer de la zone index vers la zone de dépôt</li>
-        <li><img src="./images/featured.png" alt=""></li>
-        <li>
-            <mark>git log</mark>
-            <ul>
-                <li>Afficher les commites[SHA-1: identifaint unique de 40 caractéres, l'auteur, date de création, message de la commit, un ensemble de modification, liste(SHA-1) de son ou ses parents]</li>
-                <li>--oneline : Afficher les commites en lines</li>
-                <li>--oneline -1 :Afficher le dernier commit</li>
-                <li>--oneline -2: Afficher les deux derniers commites</li>
-                <li>-p nom_fichier : Afficher les modofications sur les fichiers</li>
-                <li>Exemple des comites<br><img src="./images/commit.webp" alt="" srcset=""></li>
-            </ul>
-        </li>
-        <li><mark>git show </mark> : Voir un commit en détail</li>
-        <li><mark>git diff</mark>
-            <ul>
-                <li>tous les modifications entre zone du travail et la dernier commite (- ou rouge: supprission d'une ligne, + ou vert ajout d'une ligne)</li>
-                <li>--cached : Modification entre zone index et la dernier commite</li>
-            </ul>
-        </li>
-        <li>
-            Pointeurs:
-            <ul>
-                <li>Master : pointeur branche principale qui poite sur la dernier commit</li>
-                <li>HEAD : Poite par défaut sur master mais on peut la déplacer entre les commites</li>
-                <li>Tag : pointeur personnel fix</li>
-                <li>Création d'un tag:
-                    <ol>
-                        <li>Déplacer au niveau du commit : git checkout SHA-1</li>
-                        <li>Donner un nom au tag : <mark>git tag V01</mark></li> 
-                        <li>Supprimer un tag : git tag --delete 'V01'</li>
-                        
-                    </ol>
-                </li>
-            </ul>
-        </li>
-        <li>Déplacer le tag HEAD entre les commites:
-            <ul>
-                <li><mark>git checkout</mark> SHA-1 : Voir les comites sans modofocations</li>
-                <li>git checkout nom_tag</li>
-                <li>git checkout master : revenir a la dernier commite</li>
-            </ul>
-        </li>
-    </ul>
-    <h2>gihub</h2>
-    <ul>
-        <li>Inscription : <a href="https://github.com/">https://github.com/</a></li>
-        <li>git clone https://github/mom_site.git ==> au niveau dépôt locale [master, origin/master]</li>
-        <li>Gérer les remotes(un pointeau sur le dépôt distant):
-            <ul>
-                <li>git remote -v</li>
-                <li>git remote show origin</li>
-                <li>Ajouter un remote : <mark>git remote add origin https://... monsite.git</mark></li>
-                <li>Pousser les modofications sans les tags vers serveur : <mark>git push -u origin master</mark></li>
-                <li>git pull origin V1 ou tous les tags <mark>git push origin --tags</mark>mark></li>
-                <li>Récuper les modifictions du serveur vers dépôt loale et déplacer master vers origin/master: <mark>git pull</mark></li>
-            </ul>
-        </li>
-    </ul>
-    <h2>Travailler en équipe</h2>
-    <p>
-        <img src="./images/equipe.png" alt="Equipe">
-    </p>
-    <p>git blame nom_fichier : [^la personne qui a creér le fichier , SHA-1 ...] permet de savoir qui a modifié chaque ligne d'un fichier et quand</p>
-    <p>gitk nom_fichier ==> version graphique</p>
-    <h2>le système de branche</h2>
-    <p>
-        Une branche est une version parallèle de ton code.Elle permis de travailler sur une fonctionalité ou une correction sans modifier la brache principale.
-    </p>
-    <ul>
-        <li>git branch ==> *master</li>
-        <li>git branch css</li>
-        <li>git branch ==> master *css</li>
-        <li>git checkout css</li>               
-    </ul>
-    <h3>Merge</h3>
-    <ul>
-        <li>git switch master</li>
-        <li>git merge css</li>
-    </ul>   
+
+        <p>
+            <strong>Git est un système de contrôle de version distribué.</strong>
+        </p>
+
+        <ul>
+            <li>Suivre les modifications des fichiers</li>
+            <li>Revenir à des versions précédentes</li>
+            <li>Permettre à plusieurs personnes de travailler sur le même projet</li>
+            <li>Conserver l'historique du code</li>
+        </ul>
+
+        <h2>Installation</h2>
+        <ul>
+            <li>
+                <a href="https://git-scm.com/" target="_blank">
+                    Télécharger Git
+                </a>
+            </li>
+            <li><strong>git -v</strong> : Vérifier l'installation</li>
+        </ul>
+
+        <h2>Configuration</h2>
+        <ul>
+            <li><code>git config --global user.name "alex"</code></li>
+            <li><code>git config --global user.email "alex@gmail.com"</code></li>
+            <li><code>git config --list</code></li>
+            <li><code>git --help</code> : Aide Git</li>
+        </ul>
+
+        <h2>Initialiser un dépôt Git</h2>
+        <p><code>git init</code> : Crée un dossier caché <code>.git</code></p>
+
+        <h2>Les zones Git</h2>
+        <ul>
+            <li><strong>Working Directory</strong> (Zone de travail)</li>
+            <li><strong>Staging Area</strong> (Zone d'index)</li>
+            <li><strong>Repository</strong> (Zone de dépôt)</li>
+        </ul>
+
+        <h2>Les commandes Git</h2>
+
+        <ul>
+            <li>
+                <mark>git status</mark> : Affiche l’état actuel du dépôt
+            </li>
+
+            <li>
+                <mark>git add</mark>
+                <ul>
+                    <li><code>git add nom_fichier</code></li>
+                    <li><code>git add .</code></li>
+                </ul>
+            </li>
+
+            <li><mark>git reset</mark> : Retirer un fichier de l’index</li>
+
+            <li><mark>git commit -m "message"</mark> : Valider les modifications</li>
+
+            <li>
+                <mark>git log</mark>
+                <ul>
+                    <li><code>--oneline</code></li>
+                    <li><code>-p</code></li>
+                </ul>
+            </li>
+
+            <li><mark>git show</mark> : Voir un commit en détail</li>
+
+            <li>
+                <mark>git diff</mark>
+                <ul>
+                    <li>Voir les modifications non indexées</li>
+                    <li><code>--cached</code></li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>Les pointeurs</h2>
+        <ul>
+            <li><strong>main</strong> : Branche principale</li>
+            <li><strong>HEAD</strong> : Pointe vers la branche actuelle</li>
+            <li><strong>Tag</strong> : Référence fixe sur un commit</li>
+        </ul>
+
+        <h3>Créer un tag</h3>
+        <ol>
+            <li><code>git tag v1.0</code></li>
+            <li><code>git tag -d v1.0</code></li>
+            <li><code>git push origin v1.0</code></li>
+        </ol>
+
+        <h2>Branches</h2>
+        <p>
+            Une branche est une version parallèle du code permettant de développer une fonctionnalité sans modifier la branche principale.
+        </p>
+
+        <ul>
+            <li><code>git branch</code></li>
+            <li><code>git branch nom_branche</code></li>
+            <li><code>git switch nom_branche</code></li>
+            <li><code>git branch -d nom_branche</code></li>
+        </ul>
+
+        <h3>Fusion (Merge)</h3>
+        <ul>
+            <li><code>git switch main</code></li>
+            <li><code>git merge nom_branche</code></li>
+        </ul>
+
+        <h2>GitHub</h2>
+
+        <p>
+            GitHub est une plateforme d’hébergement de code basée sur Git.
+        </p>
+
+        <ul>
+            <li>
+                Inscription :
+                <a href="https://github.com/" target="_blank">
+                    https://github.com/
+                </a>
+            </li>
+
+            <li><code>git clone https://github.com/utilisateur/projet.git</code></li>
+
+            <li>
+                Gérer les remotes :
+                <ul>
+                    <li><code>git remote -v</code></li>
+                    <li><code>git remote add origin https://github.com/utilisateur/projet.git</code></li>
+                </ul>
+            </li>
+
+            <li>
+                Envoyer les modifications :
+                <ul>
+                    <li><code>git push -u origin main</code></li>
+                    <li><code>git push origin --tags</code></li>
+                </ul>
+            </li>
+
+            <li>
+                Récupérer les modifications :
+                <ul>
+                    <li><code>git pull</code></li>
+                    <li><code>git fetch</code></li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>Travail en équipe</h2>
+        <p>
+            <img src="./images/equipe.png" alt="Travail en équipe">
+        </p>
+
+        <p><code>git blame nom_fichier</code> : Voir qui a modifié chaque ligne.</p>
+        <p><code>gitk</code> : Interface graphique Git</p>
+        <h2>GitHub avancé</h2>
+<p>GitHub propose des outils collaboratifs puissants pour gérer un projet au-delà du simple contrôle de version.</p>
+
+<h3>Pull Request (PR)</h3>
+<p>
+    Une Pull Request permet de proposer des modifications d’une branche vers une autre (souvent vers <code>main</code>) et d’en discuter avant de fusionner.
+</p>
+<ul>
+    <li>Créer une branche : <code>git checkout -b nouvelle-feature</code></li>
+    <li>Commiter les modifications : <code>git add .</code> puis <code>git commit -m "Ajout feature"</code></li>
+    <li>Pusher la branche : <code>git push origin nouvelle-feature</code></li>
+    <li>Sur GitHub : Créer la Pull Request pour revue et fusion</li>
+</ul>
+
+<h3>Fork</h3>
+<p>
+    Forker un dépôt crée une copie personnelle du projet sur votre compte GitHub, ce qui permet de contribuer sans toucher au dépôt original.
+</p>
+<ul>
+    <li>Cliquez sur <strong>Fork</strong> sur la page GitHub du projet</li>
+    <li>Clonez votre fork : <code>git clone https://github.com/votre-compte/projet.git</code></li>
+    <li>Créez vos branches et PR pour proposer vos changements</li>
+</ul>
+
+<h3>Issues</h3>
+<p>
+    Les Issues servent à suivre les bugs, idées et tâches à faire dans un projet.
+</p>
+<ul>
+    <li>Créer une Issue pour signaler un bug ou proposer une amélioration</li>
+    <li>Assigner des labels, des milestones et des personnes responsables</li>
+    <li>Commenter et suivre l’avancement jusqu’à la résolution</li>
+</ul>
+
+<h3>Actions</h3>
+<p>
+    GitHub Actions permet d’automatiser des tâches comme tests, déploiements, ou intégration continue.
+</p>
+<ul>
+    <li>Créer un fichier <code>.github/workflows/main.yml</code></li>
+    <li>Définir les jobs et steps : build, test, déploiement</li>
+    <li>Chaque push ou Pull Request peut déclencher automatiquement ces workflows</li>
+</ul>
+
+
     </section>
+
     <footer>
-        <p>Réaliser par "alex"</p>
+        <p>Réalisé par "alex"</p>
     </footer>
 
 </div>
+
 </body>
 </html>
